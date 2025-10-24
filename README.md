@@ -1,4 +1,19 @@
 # E-commerce Analytics & Forecast (light)
+## 🚀 Задача
+Прогноз GMV и KPI e-commerce, когортный анализ и воронка.
+
+## 🧰 Стек
+Python, Pandas, Statsmodels/Prophet, SQL (CTE), Jupyter, GitHub Actions.
+
+## 🧪 Как запустить
+python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+python -m src.main --build-data --make-figures --forecast
+
+<p align="center">
+  <img src="dashboards/kpi_board.png" alt="KPI board: GMV, AOV, Conversion, New buyer share" width="45%">
+  <img src="dashboards/cohorts_retention.png" alt="Cohort retention heatmap" width="45%">
+</p>
 
 
 ## Структура
