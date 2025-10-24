@@ -1,34 +1,84 @@
-name: CI
+name: CI Pipeline
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, develop ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, develop ]
 
 jobs:
-  build-and-test:
+  build-test-lint:
+    name: Build, Lint & Test
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      # -------------------------------
+      # 1️⃣  Скачиваем репозиторий
+      # -------------------------------
+      - name: Checkout repository
         uses: actions/checkout@v4
 
+      # -------------------------------
+      # 2️⃣  Настраиваем Python
+      # -------------------------------
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
+      # -------------------------------
+      # 3️⃣  Кэшируем зависимости pip
+      # -------------------------------
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      # -------------------------------
+      # 4️⃣  Устанавливаем зависимости
+      # -------------------------------
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install pytest ruff black
+          pip install pytest pytest-cov ruff black mypy
 
-      - name: Lint (ruff + black)
+      # -------------------------------
+      # 5️⃣  Проверка стиля Ruff
+      # -------------------------------
+      - name: Ruff lint
+        run: ruff check src tests
+
+      # -------------------------------
+      # 6️⃣  Проверка форматирования Black
+      # -------------------------------
+      - name: Black format check
+        run: black --check src tests
+
+      # -------------------------------
+      # 7️⃣  Проверка типизации mypy
+      # -------------------------------
+      - name: Type checking (mypy)
+        run: mypy src
+
+      # -------------------------------
+      # 8️⃣  Запускаем тесты + покрытие
+      # -------------------------------
+      - name: Run tests with coverage
         run: |
-          ruff check src tests
-          black --check src tests
+          pytest -q --cov=src --cov-report=term-missing --cov-report=xml
 
-      - name: Run tests
-        run: pytest -q
+      # -------------------------------
+      # 9️⃣  Загружаем отчёт в Codecov (опционально)
+      # -------------------------------
+      - name: Upload coverage to Codecov
+        if: success()
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage.xml
+          fail_ci_if_error: false
+          verbose: true
