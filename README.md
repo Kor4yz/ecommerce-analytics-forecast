@@ -4,13 +4,15 @@
 ## Структура
 ```
 ecommerce-analytics-forecast/
-├── data/
+├── data/       # сырьё/семплы
 │   └── transactions_sample_head.csv  
-├── notebooks/
+├── notebooks/  # 01_eda.ipynb, 02_modeling_forecast.ipynb
 │   └── ecommerce_analysis.ipynb      
-├── sql/
-│   └── metrics.sql
-├── src/
+├── sql/        # метрики и витрины
+│   └── metrics.sql  
+├── src/        # функциональные скрипты/cli
 │   └── prepare_data.py
+├─ dashboards/  # png/pdf скрины BI
+├─ docs/        # gh-pages (index.html + картинки)
 └── README.md
 ```
