@@ -7,10 +7,15 @@
 
 data/
 ├── raw/ # Сырые данные (исходные транзакции)
+
 │ └── transactions_sample_head.csv
+
 ├── processed/ # Обработанные данные (agregations, parquet)
+
 │ ├── orders.parquet
+
 │ └── events.parquet
+
 └── external/ # Справочники (опционально)
 
 ---
