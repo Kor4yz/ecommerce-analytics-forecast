@@ -1,0 +1,24 @@
+# python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+.env
+.envrc
+
+# jupyter
+.ipynb_checkpoints/
+*.ipynb_convert/
+*.nbconvert/
+
+# data & outputs
+data/*
+!data/README.md
+!data/transactions_sample_head.csv
+results/
+!results/.gitkeep
+
+# os / misc
+.DS_Store
+.idea/
+.vscode/
