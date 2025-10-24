@@ -22,3 +22,7 @@ results/
 .DS_Store
 .idea/
 .vscode/
+artifacts/
+reports/
+data/*.csv
+!data/transactions_sample_head.csv
