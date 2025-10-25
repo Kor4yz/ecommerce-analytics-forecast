@@ -2,6 +2,10 @@
 
 Аналитический проект по e-commerce: полная витрина метрик в ClickHouse + интерактивные дашборды в Yandex DataLens.
 
+🧰 Стек
+
+ClickHouse • Yandex DataLens • Python/Jupyter • SQL
+
 ## 🔍 Что внутри
 
 - **Данные:** Kaggle “Online Retail” (Invoices, StockCode, Quantity, UnitPrice, CustomerID, Country).
@@ -95,10 +99,6 @@ Retention: тепловая карта по когортам (месяц рег�
 Kaggle: Online Retail Data Set (Автор: Dr. Daqing Chen, UCI)
 
 https://www.kaggle.com/datasets/carrie1/ecommerce-data
-
-🧰 Стек
-
-ClickHouse • Yandex DataLens • Python/Jupyter • SQL
 
 ## 📬 Автор
 **Денис Морозов**  
