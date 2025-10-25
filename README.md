@@ -18,22 +18,37 @@
 ---
 ## 🧱 Архитектура
 data/ecommerce_full.csv → staging_orders
+
 ↳ fact_order_lines (нормализованные строки)
+
 ↳ fact_orders (агрегат по заказу)
+
 ↳ views/marts (для BI):
+
 v_daily_kpi
+
 v_gmv_by_country
+
 v_orders_enriched
+
 v_cohorts_retention
+
 v_top_products
+
 v_sku_gmv_qty
+
 ---
 
 ---
 ## 🗺️ Репозиторий
+
 ├─ data/ # описание датасетов
+
 ├─ notebooks/ # EDA/подготовка (Jupyter)
+
 ├─ sql/ # DDL/DML для ClickHouse (см. ниже)
+
 ├─ src/ # утилиты загрузки (при необходимости)
+
 ├─ docs/ # скриншоты и картинки для README
 ---
