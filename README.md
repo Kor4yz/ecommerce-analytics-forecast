@@ -44,11 +44,11 @@ v_sku_gmv_qty
 
 ├─ notebooks/ # EDA/подготовка (Jupyter)
 
-├─ sql/ # DDL/DML для ClickHouse (см. ниже)
+├─ sql/ # DDL/DML для ClickHouse 
 
 ├─ src/ # утилиты загрузки (при необходимости)
 
-├─ docs/ # скриншоты и картинки для README
+├─ dashboard/ # скриншоты и картинки для README
 ---
 
 
@@ -69,7 +69,7 @@ clickhouse-client -n < sql/03_build_facts_and_views.sql
 SELECT * FROM v_daily_kpi ORDER BY d LIMIT 10;
 SELECT * FROM v_cohorts_retention ORDER BY cohort_month, month_n;
 ```
-📊 Дашборды (DataLens)
+📊 Дашборды [(DataLens)](https://datalens.ru/r19wac3nqtz0c?_no_controls=1&state=7a421f30208&_theme=dark)
 
 Верхняя панель KPI: GMV / Orders / Buyers / AOV / New buyer share
 
