@@ -1,10 +1,4 @@
 # SQL для ClickHouse
-
-Порядок выполнения:
-1. `01_create_database.sql`
-2. `02_create_tables.sql`
-3. `03_build_facts_and_views.sql` — зальёт данные из `staging_orders` в факты и создаст представления под DataLens.
-
 Загрузка CSV:
 
 ```bash
