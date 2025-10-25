@@ -86,8 +86,9 @@ Retention: тепловая карта по когортам (месяц рег�
 Дополнительно: AOV & ARPU (линии)
 
 <p align="center">
-  <img src="dashboards/KPI.png" alt="Основные KPI по travel" width="475"/>
-  <img src="dashboards/Analyze.png" alt="Суммарный анализ" width="400"/>
+  <img src="dashboard/KPI.png" alt="Основные KPI по travel" width="475"/>
+  <img src="dashboards/ARPU.png" alt="Суммарный анализ" width="400"/>
+  <img src="dashboards/GVM по дням.png" alt="GVM" width="400"/>
 </p>
 
 
