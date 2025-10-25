@@ -36,18 +36,12 @@ data/
 
 ## ⚙️ Использование в пайплайне
 
-- 📥 Исходные данные (`raw/transactions_sample_head.csv`) читаются функцией `build_dataset()` из [`src/pipeline.py`](../src/pipeline.py).  
+- 📥 Исходные данные (`raw/ecommerce-analytics-forecast.csv`) читаются функцией `build_dataset()` из [`src/pipeline.py`](../src/pipeline.py).  
 - 🧹 После очистки и агрегации создаются:
   - `processed/orders.parquet` — очищенные заказы,
   - `processed/events.parquet` — события для воронки (сгенерированные при необходимости).
 
 ---
-
-## ⚠️ Замечания
-
-- Полные выгрузки **не хранятся в GitHub** (см. `.gitignore`).
-- Если хочешь использовать свои данные, положи их в `data/raw/` и обнови пути в `config.yaml`.
-
 ---
 
 ## 📎 Пример загрузки в Python
@@ -55,5 +49,5 @@ data/
 ```python
 import pandas as pd
 
-df = pd.read_csv("data/raw/transactions_sample_head.csv", parse_dates=["order_ts"])
+df = pd.read_csv("data/raw/ecommerce-analytics-forecast.csv", parse_dates=["order_ts"])
 print(df.head())
