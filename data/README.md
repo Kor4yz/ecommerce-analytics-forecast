@@ -8,7 +8,7 @@
 data/
 ├── raw/ # Сырые данные (исходные транзакции)
 
-│ └── transactions_sample_head.csv
+│ └── ecommerce-analytics-forecast.csv
 
 ├── processed/ # Обработанные данные (agregations, parquet)
 
