@@ -1,33 +1,39 @@
-# E-commerce Analytics & Forecast 
-## 🚀 Задача
-Прогноз GMV и KPI e-commerce, когортный анализ и воронка.
+# Ecommerce-analytics-forecast
 
-## 🧰 Стек
-Python, Pandas, Statsmodels/Prophet, SQL (CTE), Jupyter, GitHub Actions, Datalens.
+Аналитический проект по e-commerce: полная витрина метрик в ClickHouse + интерактивные дашборды в Yandex DataLens.
 
-## 🧪 Как запустить
-python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-python -m src.main --build-data --make-figures --forecast
+## 🔍 Что внутри
 
-<p align="center">
-  <img src="dashboards/kpi_board.png" alt="KPI board: GMV, AOV, Conversion, New buyer share" width="45%">
-  <img src="dashboards/cohorts_retention.png" alt="Cohort retention heatmap" width="45%">
-</p>
+- **Данные:** Kaggle “Online Retail” (Invoices, StockCode, Quantity, UnitPrice, CustomerID, Country).
+- **Хранилище:** ClickHouse (стейджинг → факты → представления/марты).
+- **BI:** Yandex DataLens (KPI, тренды GMV/AOV/ARPU, когорты retention, новые vs возвратные, топ SKU).
+- **Ядро метрик:**
+  - `GMV` = Σ (Quantity × UnitPrice)
+  - `Orders` = countDistinct(order_id)
+  - `Buyers` = countDistinct(user_id)
+  - `AOV` = GMV / Orders
+  - `ARPU` = GMV / Buyers
+  - `New buyer share` = New buyers / Buyers
+  - `Retention` = доля когорты, вернувшаяся в n-й месяц
+---
+## 🧱 Архитектура
+data/ecommerce_full.csv → staging_orders
+↳ fact_order_lines (нормализованные строки)
+↳ fact_orders (агрегат по заказу)
+↳ views/marts (для BI):
+v_daily_kpi
+v_gmv_by_country
+v_orders_enriched
+v_cohorts_retention
+v_top_products
+v_sku_gmv_qty
+---
 
-
-## Структура
-```
-ecommerce-analytics-forecast/
-├── data/       # сырьё/семплы
-│   └── transactions_sample_head.csv  
-├── notebooks/  # 01_eda.ipynb, 02_modeling_forecast.ipynb
-│   └── ecommerce_analysis.ipynb      
-├── sql/        # метрики и витрины
-│   └── metrics.sql  
-├── src/        # функциональные скрипты/cli
-│   └── prepare_data.py
-├─ dashboards/  # png/pdf скрины BI
-├─ docs/        # gh-pages (index.html + картинки)
-└── README.md
-```
+---
+## 🗺️ Репозиторий
+├─ data/ # описание датасетов
+├─ notebooks/ # EDA/подготовка (Jupyter)
+├─ sql/ # DDL/DML для ClickHouse (см. ниже)
+├─ src/ # утилиты загрузки (при необходимости)
+├─ docs/ # скриншоты и картинки для README
+---
