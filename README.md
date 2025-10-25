@@ -100,3 +100,6 @@ https://www.kaggle.com/datasets/carrie1/ecommerce-data
 
 ClickHouse • Yandex DataLens • Python/Jupyter • SQL
 
+## 📬 Автор
+**Денис Морозов**  
+📧 Kor4yz@yandex.ru · [GitHub](https://github.com/Kor4yz) · [Telegram](https://t.me/kor4yz)
