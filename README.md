@@ -87,8 +87,8 @@ Retention: тепловая карта по когортам (месяц рег�
 
 <p align="center">
   <img src="dashboard/KPI.png" alt="Основные KPI по travel" width="475"/>
-  <img src="dashboards/ARPU.png" alt="Суммарный анализ" width="400"/>
-  <img src="dashboards/GVM по дням.png" alt="GVM" width="400"/>
+  <img src="dashboard/ARPU.png" alt="Суммарный анализ" width="400"/>
+  <img src="dashboard/GVM по дням.png" alt="GVM" width="400"/>
 </p>
 
 
