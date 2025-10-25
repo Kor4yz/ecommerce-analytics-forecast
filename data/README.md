@@ -12,11 +12,7 @@ data/
 
 ├── processed/ # Обработанные данные (agregations, parquet)
 
-│ ├── orders.parquet
-
-│ └── events.parquet
-
-└── external/ # Справочники (опционально)
+│ └── transactions_sample_head.csv
 
 ---
 
