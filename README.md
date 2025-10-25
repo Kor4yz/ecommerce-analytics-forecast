@@ -93,13 +93,6 @@ Retention: тепловая карта по когортам (месяц рег�
   <img src="dashboard/GVM по дням.png" alt="GVM" width="550"/>
 </p>
 
-
-📦 Источник данных
-
-Kaggle: Online Retail Data Set (Автор: Dr. Daqing Chen, UCI)
-
-https://www.kaggle.com/datasets/carrie1/ecommerce-data
-
 ## 📬 Автор
 **Денис Морозов**  
 📧 Kor4yz@yandex.ru · [GitHub](https://github.com/Kor4yz) · [Telegram](https://t.me/kor4yz)
