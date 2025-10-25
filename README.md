@@ -3,7 +3,7 @@
 Прогноз GMV и KPI e-commerce, когортный анализ и воронка.
 
 ## 🧰 Стек
-Python, Pandas, Statsmodels/Prophet, SQL (CTE), Jupyter, GitHub Actions.
+Python, Pandas, Statsmodels/Prophet, SQL (CTE), Jupyter, GitHub Actions, Datalens.
 
 ## 🧪 Как запустить
 python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
