@@ -1,4 +1,4 @@
-# E-commerce Analytics & Forecast (light)
+# E-commerce Analytics & Forecast 
 ## 🚀 Задача
 Прогноз GMV и KPI e-commerce, когортный анализ и воронка.
 
