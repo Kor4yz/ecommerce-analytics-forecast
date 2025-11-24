@@ -73,7 +73,7 @@ clickhouse-client -n < sql/03_build_facts_and_views.sql
 SELECT * FROM v_daily_kpi ORDER BY d LIMIT 10;
 SELECT * FROM v_cohorts_retention ORDER BY cohort_month, month_n;
 ```
-📊 Дашборды [(DataLens)](https://datalens.yandex/r19wac3nqtz0c)
+📊 Дашборды [(DataLens)](https://datalens.yandex/r19wac3nqtz0c) (срок действия dataseta в Clickhouse истек)
 
 Верхняя панель KPI: GMV / Orders / Buyers / AOV / New buyer share
 
